@@ -22,7 +22,7 @@ const params={
  code:actualcode,
  code_verifier:verifier,
  grant_type:"authorization_code",
- redirect_uri:"https://ornate-nasturtium-2c5fb0.netlify.app/api/fitbitredirect"
+ //redirect_uri:"https://ornate-nasturtium-2c5fb0.netlify.app/api/fitbitredirect"
 }
 
 
