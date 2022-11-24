@@ -2,7 +2,11 @@ import Axios from "axios";
 const {base64encode}=require("nodejs-base64")
 import qs from "qs"
 
+
+
+
 export default async function FitbitRedirect(req,res){
+
 
 
 let {code}=req.query
@@ -31,6 +35,7 @@ let response=await Axios({
   "Authorization":`Basic ${base64string}`
  }
 })
+
 let token=await response.data.access_token
 console.log(token)
 

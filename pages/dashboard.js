@@ -10,14 +10,14 @@ function Dashboard() {
              method:"get",
              headers:{
         "Accept": "application/json",
-        "Authorization": `Bearer ${getCookie("fittoken")}`
+        "Authorization": `Bearer ${ getCookie("fittoken")}`
              }
         })
          let response=await request.json()
          console.log(response)
          setRes(response)
          console.log(res)
-         console.log(getCookies("fittoken"))
+         console.log(getCookie("fittoken"))
          }     
 
 
