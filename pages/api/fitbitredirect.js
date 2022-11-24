@@ -35,6 +35,6 @@ let token=await response.data.access_token
 console.log(token)
 
 res.setHeader("Set-Cookie", `fittoken=${token};path=/`)
-return res.redirect("/dashboard?fitaccess=true")
+return res.redirect("/dashboard")
 
 }
