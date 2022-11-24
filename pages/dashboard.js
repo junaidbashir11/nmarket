@@ -28,9 +28,9 @@ function Dashboard() {
         <h1 style={{color:"tomato"}}>Dashboard</h1>
         <div className="container">
         <button className="btn btn-dark"><Link href="/api/getcodefitbit" style={{color:"orange",textDecoration:"none"}}>Fitbit Connect</Link></button>
-        <div class="container">
-  <div class="row">
-    <div class="col">
+        <div className="container">
+  <div className="row">
+    <div className="col">
       <div className="card">
         <div className="card-body">
           <button className="btn btn-warning"  onClick={()=>getFitbitData()}> get goals </button>
@@ -40,7 +40,7 @@ function Dashboard() {
         </div>
       </div>
     </div>
-    <div class="col">
+    <div className="col">
 
     <div className="card">
         <div className="card-body">
@@ -48,7 +48,7 @@ function Dashboard() {
         </div>
       </div>
     </div>
-    <div class="col">
+    <div className="col">
     <div className="card">
         <div className="card-body">
           <button className="btn btn-success">Token Reward</button>
