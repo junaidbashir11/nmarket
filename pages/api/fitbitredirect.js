@@ -26,7 +26,7 @@ const params={
 }
 
 
-let response=await Axios({
+let response=await Axios ({
  method:"post",
  url:"https://api.fitbit.com/oauth2/token",
  data:qs.stringify(params),
@@ -36,10 +36,14 @@ let response=await Axios({
  }
 })
 
+
+
+
 let token=await response.data.access_token
 console.log(token)
 
 res.setHeader("Set-Cookie", `fittoken=${token};path=/`)
-return res.redirect("/dashboard")
+
+return res.json({code:"yes"})
 
 }
