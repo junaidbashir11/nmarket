@@ -2,7 +2,8 @@
 import {useContract,ThirdwebNftMedia} from "@thirdweb-dev/react"
 import { useState } from "react";
 import { useRouter } from "next/router";
-
+import Header from "../components/header"
+import Footer from "../components/footer";
 
 export default function Marketplace(){
 
@@ -32,36 +33,55 @@ return (
 
 
  <div>
-		
+		<Header></Header>
     <section className="">
-  <div className="">
+  <div className="container">
    
     <h1>MarketPlace</h1>
+    <title>MarketPlace | Krypt</title>
+
     {
     listing !==""?
     
-    <>
+    <div className="d-flex flex-row bd-highlight mb-3">
     <center>
     {listing?.map((obj)=>(
 
-<div>
+<div className="">
 
-<ThirdwebNftMedia
+
+<div class="">
+        </div>
+        <div class="">
+            <div class="card text-white bg-warningsu">
+                <div class="card-body">
+                    <h3 class="card-title">Monkey Ape</h3>
+                    <ThirdwebNftMedia
               key={obj.asset.id}
               metadata={obj.asset}
-              height={600}
-              width={500}
-            />
+              height={200}
+              width={200}
+            /><br/>
 <p className="badge bg-dark">{obj.buyoutCurrencyValuePerToken.displayValue}</p><br/>  
 <p className="badge bg-dark">{obj.buyoutCurrencyValuePerToken.symbol}</p>   
- <button onClick={()=>buy(obj.id)} className="">Buy</button>         
+ <button onClick={()=>buy(obj.id)} className="btn btn-outline-light">Buy</button> 
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        
 </div>
 
  ))}
 
     </center>
   
-    </>
+    </div>
     :
     <>
     <p>Loading .......</p>
@@ -73,6 +93,7 @@ return (
             
   </div>
   </section>
+  <Footer></Footer>
 
  </div>
 )

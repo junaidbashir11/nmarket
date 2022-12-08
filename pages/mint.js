@@ -1,12 +1,14 @@
 import { useState } from "react";
 import {useAddress,useContract} from "@thirdweb-dev/react"
 import Image from "next/image"
+import Header from "../components/header"
+import Footer from "../components/footer";
 
 export default  function Create () {
  
 
   const {contract:erc721}=useContract("0x03ea4b2F400ef807a4bBBef8E37D4CD72C249aEF","nft-collection")
-  const {contract:erc1155}=useContract( "0x1ab9044C60530B2D301489ABe7EaE4733bba3e85","edition")
+  const {contract:erc1155}=useContract("0x1ab9044C60530B2D301489ABe7EaE4733bba3e85","edition")
  
 
   const address=useAddress()
@@ -15,9 +17,10 @@ export default  function Create () {
   const [Name, setName] = useState("");
   const [nfttype, setNfttype] = useState("erc721");
   const [Quantity, setQuantity] = useState(1);
+  const [networks,setNetworks]=useState("mumbai")
   
  const [picture, setPicture] = useState({
-  preview: "/favicon.ico",
+  preview: "/video-calling.png",
   img: ""
 });
 
@@ -97,20 +100,24 @@ async function ERC1155() {
 
   console.log(address)
   return (
-    <div>
-     
-    
+    <div className="">
+     <Header></Header>
+     <title>Mint | Krypt</title>
+     <div className="container">
+     <div style={{ "background-image": "url('https://nftcollection.xyz/wp-content/uploads/2021/12/nftcollection1-768x404.png') ", "height": "400px", "background-size": "cover" }}>
+    <center><span style={{"textAlign" : "center" , "font-size":"40px","background-color" : "white"}}>Mint Your NFT </span></center>
+</div>
+    <div className="row">
 
+      <div className="col" style={{backgroundColor:""}}>
 
-
-
-      <section className="">
+      <section className="container">
         
-        <div className="container">
+        <div className="form-group">
            <center>
            <div className="">
 
-<Image  src={picture.preview} width={300} height={300} ></Image>
+
 
 </div>
            </center>
@@ -118,9 +125,8 @@ async function ERC1155() {
        
           <div className="">
             {/* <!-- File Upload --> */}
-            
-            {/** file upload */}
-            <div className="mb-6">
+          <h3 style={{"margin-top" : "10px"}}>Upload and Start Minting your NFT</h3>
+            <div className="">
               <label
                 htmlFor="item-name"
                 className=""
@@ -130,7 +136,7 @@ async function ERC1155() {
               <input
                 type="file"
                 id="item-file"
-                className=""
+                className="form-control"
                 placeholder="Item file"
           
                 onChange={(e)=>setPicture({...picture,img:e.target.files[0],preview:`${URL.createObjectURL(e.target.files[0])}`})}
@@ -149,7 +155,7 @@ async function ERC1155() {
               <input
                 type="text"
                 id="item-name"
-                className=""
+                className="form-control"
                 placeholder="Item name"
                 onChange={(e)=>setName(e.target.value)}
                 required
@@ -167,7 +173,7 @@ async function ERC1155() {
               <input
                 type="text"
                 id="item-name"
-                className=""
+                className="form-control"
                 placeholder="Item title"
                 onChange={(e)=>setTitle(e.target.value)}
                 required
@@ -183,13 +189,10 @@ async function ERC1155() {
               >
                 Description
               </label>
-              <p className="">
-                The description will be included on the {"item's"} detail page
-                underneath its image. Markdown syntax is supported.
-              </p>
+              
               <textarea
                 id="item-description"
-                className=""
+                className="form-control"
                 rows="4"
                 required
                 placeholder="Provide a detailed description of your item."
@@ -202,7 +205,7 @@ async function ERC1155() {
         
 
             {/* <!-- Supply --> */}
-            <button onClick={()=>setNfttype("erc1155")} className="">as erc1155</button>
+            <button onClick={()=>setNfttype("erc1155")} className="btn btn-warning"> erc1155 options</button>
 
             {
             nfttype!=="erc721"?
@@ -225,17 +228,17 @@ async function ERC1155() {
               <input
                 type="text"
                 id="item-supply"
-                className=""
+                className="form-control"
                 placeholder="1"
                 onChange={(e)=>setQuantity(e.target.value)}
               />
               
-            <button onClick={()=>setNfttype("erc721")} className="">close</button>
+            <button onClick={()=>setNfttype("erc721")} className="btn btn-danger">close</button>
             <button
             onClick={()=>ERC1155()}
-              className=""
+              className="btn btn-primary"
             >
-              Create erc1155
+              mint  erc1155
             </button>
             </div>
 
@@ -248,15 +251,36 @@ async function ERC1155() {
             {/* <!-- Submit --> */}
             <button
             onClick={()=>ERC721()}
-              className=""
+              className="btn btn-primary"
             >
-              Create erc721
+  Mint erc721
             </button>
           </div>
         </div>
       </section>
       {/* <!-- end create --> */}
+
+
+
+
+      </div>
+
+      <div className="col" style={{backgroundColor:"#bfbfbf"}}>
+      <div>
+        <h3 style={{"margin-top" : "10px" , "color" : "black"}}>NFT Preview</h3>
+      </div>
+      <Image  src={picture.preview} width={300} height={300}></Image>
+
+
+      </div>
+
+    </div>
+
+
+
+
+     <Footer></Footer>
+    </div>
     </div>
   );
 };
-
