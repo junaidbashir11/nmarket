@@ -17,7 +17,7 @@ if (!data)  return "Loading...";
 return (
  <div>
 
-<p>{JSON.stringify(data,null,2)}</p>
+<p className="alert alert-warning">{JSON.stringify(data,null,2)}</p>
 
   </div>
 

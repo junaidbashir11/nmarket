@@ -32,7 +32,7 @@ return (
 
 
 
- <div>
+ <div style={{"background-image":"url(/bc.jpeg)"}}>
 		<Header></Header>
     <section className="">
   <div className="container">
@@ -43,8 +43,8 @@ return (
     {
     listing !==""?
     
-    <div className="d-flex flex-row bd-highlight mb-3">
-    <center>
+    <div className="d-flex flex-row bd-highlight mb-3" style={{padding:"3px"}}>
+  
     {listing?.map((obj)=>(
 
 <div className="">
@@ -53,14 +53,14 @@ return (
 <div class="">
         </div>
         <div class="">
-            <div class="card text-white bg-warningsu">
+            <div class="card text-white bg-warning">
                 <div class="card-body">
-                    <h3 class="card-title">Monkey Ape</h3>
+                    <h3 class="card-title"></h3>
                     <ThirdwebNftMedia
               key={obj.asset.id}
               metadata={obj.asset}
-              height={200}
-              width={200}
+              height={300}
+              width={500}
             /><br/>
 <p className="badge bg-dark">{obj.buyoutCurrencyValuePerToken.displayValue}</p><br/>  
 <p className="badge bg-dark">{obj.buyoutCurrencyValuePerToken.symbol}</p>   
@@ -78,8 +78,6 @@ return (
 </div>
 
  ))}
-
-    </center>
   
     </div>
     :

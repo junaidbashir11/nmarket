@@ -3,6 +3,8 @@ import "../styles/globals.css";
 import 'bootstrap/dist/css/bootstrap.css'
 // This is the chainId your dApp will work on.
 //import { ChakraProvider } from '@chakra-ui/react'
+import { ParallaxProvider } from 'react-scroll-parallax';
+
 
 const activeChainId = ChainId.Mumbai;
 
@@ -17,10 +19,12 @@ function MyApp({ Component, pageProps }) {
       }}
 
     >
-
+<ParallaxProvider>
 
       <Component {...pageProps} />
-    </ThirdwebProvider>
+</ParallaxProvider>
+
+      </ThirdwebProvider>
   );
 }
 

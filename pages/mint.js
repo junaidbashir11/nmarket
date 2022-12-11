@@ -100,13 +100,12 @@ async function ERC1155() {
 
   console.log(address)
   return (
-    <div className="">
+    <div className="" style={{"background-image":"url(/bc.jpeg)"}}>
      <Header></Header>
      <title>Mint | Krypt</title>
      <div className="container">
-     <div style={{ "background-image": "url('https://nftcollection.xyz/wp-content/uploads/2021/12/nftcollection1-768x404.png') ", "height": "400px", "background-size": "cover" }}>
-    <center><span style={{"textAlign" : "center" , "font-size":"40px","background-color" : "white"}}>Mint Your NFT </span></center>
-</div>
+     <div>
+     </div><br/><br/>
     <div className="row">
 
       <div className="col" style={{backgroundColor:""}}>
@@ -125,7 +124,7 @@ async function ERC1155() {
        
           <div className="">
             {/* <!-- File Upload --> */}
-          <h3 style={{"margin-top" : "10px"}}>Upload and Start Minting your NFT</h3>
+          <h3 style={{"margin-top" : "10px",color:"white"}}>Upload and Start Minting your NFT</h3>
             <div className="">
               <label
                 htmlFor="item-name"
@@ -265,9 +264,9 @@ async function ERC1155() {
 
       </div>
 
-      <div className="col" style={{backgroundColor:"#bfbfbf"}}>
+      <div className="col" style={{backgroundColor:"tomato"}}>
       <div>
-        <h3 style={{"margin-top" : "10px" , "color" : "black"}}>NFT Preview</h3>
+        <h3 style={{"margin-top" : "10px" , "color" : "white"}}>NFT Preview</h3>
       </div>
       <Image  src={picture.preview} width={300} height={300}></Image>
 

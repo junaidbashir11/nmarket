@@ -6,7 +6,7 @@ export default function Header(){
 let logout=useLogout()
 
  return (
-  <div>
+  <div style={{"background-image":"url(/bc.jpeg)"}}>
 
   
 <div className="container">
@@ -18,10 +18,10 @@ let logout=useLogout()
 
       <ul className="nav nav-pills">
       
-        <li className="nav-item"><a href="#" className="nav-link">Features</a></li>
-        <li className="nav-item"><Link href="/mint">Create</Link></li>
-        <li className="nav-item"><a href="#" className="nav-link">FAQs</a></li>
-        <li className="nav-item"><a href="#" className="nav-link">About</a></li>
+        <li className="nav-item"><a href="#" className="nav-link" style={{color:"white"}}>Features</a></li>
+        <li className="nav-item"><a href="/mint" style={{color:"white"}}>Create</a></li>
+        <li className="nav-item"><a href="#" className="nav-link" style={{color:"white"}}>FAQs</a></li>
+        <li className="nav-item"><a href="#" className="nav-link" style={{color:"white"}}>About</a></li>
         <li className="nav-item"><button className="btn btn-danger" onClick={()=>logout()}>Logout</button></li>
       </ul>
     </header>

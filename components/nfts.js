@@ -5,6 +5,8 @@ import { NATIVE_TOKEN_ADDRESS } from "@thirdweb-dev/sdk"
 import Image from "next/image";
 import Header from "../components/header"
 import styles from "../styles/Home.module.css";
+import { Slide ,Fade} from 'react-slideshow-image';
+import 'react-slideshow-image/dist/styles.css'
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -63,23 +65,22 @@ async function createListing2(id){
 
 console.log(data)
 
-if (error) return  "Please connect your wallet";
-if (!data)  return "Loading...";
+if (error) return  <p style={{color:"white"}}>Please connect your wallet</p>;
+if (!data)  return <p style={{color:"white"}}>.....Loading</p>
 return (
 	<>
 	
 	<button className="btn btn-primary" onClick={()=>setAction(true)}>Action</button>
-<button onClick={()=>setAction(false)} className="btn btn-danger"><span>close</span></button>
-  <div className="d-flex flex-row bd-highlight mb-3">
-
+<button onClick={()=>setAction(false)} className="btn btn-danger"><span>close </span></button>
+  <div className="d-flex flex-column  bd-highlight mb-2">
+  <Slide >
 
     		{data?.map(obj=>(
 
-<div>
 
-<div style={{width:"300px" ,height:"300px"}} className="alert alert-warning">
-	<div className='card'>
-  <div className="card-body">
+<div style={{width:"200px" ,height:"300px"}} className="">
+	<div className=''>
+  <div className="">
   <div>
 
 		<ThirdwebNftMedia metadata={obj.metadata}  className={styles.img}/>
@@ -111,10 +112,11 @@ return (
                 className=""
                 placeholder="Item price"
                 onChange={(e)=>setListingPrice(e.target.value)}
+																style={{backgroundColor:"whitesmoke",fontFamily:"courier new",fontWeight:"bold",color:"darkgray"}}  
                 required
               />
             </div>
-														<button onClick={()=>createListing1(obj.tokenId)} className="">list erc721</button>
+														<button onClick={()=>createListing1(obj.tokenId)} className="btn btn-success">list erc721</button>
 											
 														</>
 														:
@@ -142,10 +144,11 @@ return (
                 className=""
                 placeholder="Item price"
                 onChange={(e)=>setListingPrice(e.target.value)}
+																style={{backgroundColor:"whitesmoke",fontFamily:"courier new",fontWeight:"bold",color:"darkgray"}}  
                 required
               />
             </div>
-														<button onClick={()=>createListing2(obj.tokenId)} className="">list erc1155</button>
+														<button onClick={()=>createListing2(obj.tokenId)} className="btn btn-success">list erc1155</button>
 													
 														</>
 														:
@@ -159,9 +162,10 @@ return (
 	</div>
 </div>
 
-</div>
+
 
 						))}
+						</Slide>
   </div>
 		</>
 );

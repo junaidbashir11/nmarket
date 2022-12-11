@@ -15,3 +15,8 @@
 .navba {
   color: red;
 }
+.img {
+  width: 350px; /* You can set the dimensions to whatever you want */
+  height: 200px;
+  object-fit: cover;
+}

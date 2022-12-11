@@ -1,4 +1,6 @@
 import useSWR from "swr";
+import { Parallax } from 'react-scroll-parallax';
+
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function Transactions(props){
@@ -15,9 +17,25 @@ if (!data)  return "Loading...";
 
 
 return (
- <div>
+ <div style={{backgroundColor:""}}>
+  
+  <select className="badge bg-primary">
+  
+      
+    {data.map(obj=>(
 
-<p>{JSON.stringify(data,null,2)}</p>
+<option className="alert alert-light" style={{fontFamily:"courier new",fontWeight:"bold"}}>
+<p>from :{obj.from}</p>
+<p> to :{obj.to}</p>
+</option>
+
+
+))}
+
+</select>
+
+  
+
 
   </div>
 

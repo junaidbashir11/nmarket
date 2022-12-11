@@ -1,11 +1,12 @@
 import { ConnectWallet } from "@thirdweb-dev/react";
 import styles  from "../styles/Home.module.css";
+import Link from "next/link"
 
 export default function Header(){
   const logo = '../public/images/krypt-logo.png';
 
  return (
-  <div>
+  <div  style={{"background-image":"url(/bc.jpeg)"}}>
 
 <div className="container">
     <header className="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
@@ -16,10 +17,10 @@ export default function Header(){
         </span>
       </a>
       <ul className="nav nav-pills">
-        <li className="nav-item"><a href="/" className="nav-link" aria-current="page">Home</a></li>
-        <li className="nav-item"><a href="/mint" className="nav-link">Mint</a></li>
-        <li className="nav-item"><a href="/marketplace" className="nav-link">Market Place</a></li>
-        <li className="nav-item"><a href="/wallet" className="nav-link">Wallet</a></li>
+        <li className="nav-item"><a href="/" className="nav-link" aria-current="page" style={{color:"white"}}>Home</a></li>
+        <li className="nav-item"><a href="/mint" className="nav-link" style={{color:"white"}}>Mint</a></li>
+        <li className="nav-item"><a href="/marketplace" className="nav-link" style={{color:"white"}}>Market Place</a></li>
+        <li className="nav-item"><a href="/wallet" className="nav-link" style={{color:"white"}}>Wallet</a></li>
         <li className="nav-item"><ConnectWallet
           auth={{
             loginOptional: false,
