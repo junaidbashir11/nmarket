@@ -24,7 +24,7 @@ return (
       
     {data.map(obj=>(
 
-<option className="alert alert-light" style={{fontFamily:"courier new",fontWeight:"bold"}}>
+<option className="alert alert-light" style={{fontFamily:"courier new",fontWeight:"bold"}} key={obj.from}>
 <p>from :{obj.from}</p>
 <p> to :{obj.to}</p>
 </option>

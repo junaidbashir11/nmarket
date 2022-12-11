@@ -75,7 +75,7 @@ return (
   <div className="d-flex flex-column  bd-highlight mb-2">
   <Slide >
 
-    		{data?.map(obj=>(
+    		{data?.map((obj)=>(
 
 
 <div style={{width:"200px" ,height:"300px"}} className="">
@@ -83,7 +83,7 @@ return (
   <div className="">
   <div>
 
-		<ThirdwebNftMedia metadata={obj.metadata}  className={styles.img}/>
+		<ThirdwebNftMedia metadata={obj.metadata}  className={styles.img} key={obj.tokenId}/>
 
 		</div>
 

@@ -50,12 +50,12 @@ return (
 <div className="">
 
 
-<div class="">
+<div className="">
         </div>
-        <div class="">
-            <div class="card text-white bg-warning">
-                <div class="card-body">
-                    <h3 class="card-title"></h3>
+        <div className="">
+            <div className="card text-white bg-warning">
+                <div className="card-body">
+                    <h3 className="card-title"></h3>
                     <ThirdwebNftMedia
               key={obj.asset.id}
               metadata={obj.asset}
@@ -65,7 +65,7 @@ return (
 <p className="badge bg-dark">{obj.buyoutCurrencyValuePerToken.displayValue}</p><br/>  
 <p className="badge bg-dark">{obj.buyoutCurrencyValuePerToken.symbol}</p>   
  <button onClick={()=>buy(obj.id)} className="btn btn-outline-light">Buy</button> 
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
                 </div>
             </div>
         </div>
