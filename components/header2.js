@@ -19,10 +19,10 @@ let logout=useLogout()
 
       <ul className="nav nav-pills">
       
-        <li className="nav-item"><Link href="/features"><a href="#" className="nav-link" style={{color:"white"}}>Features</a></Link></li>
-        <li className="nav-item"><Link href="/mint"><a href="/mint" style={{color:"white"}}>Create</a></Link></li>
-        <li className="nav-item"><Link><a href="#" className="nav-link" style={{color:"white"}}>FAQs</a></Link></li>
-        <li className="nav-item"><Link><a href="#" className="nav-link" style={{color:"white"}}>About</a></Link></li>
+        <li className="nav-item"><Link href="/features"><a className="nav-link" style={{color:"white"}}>Features</a></Link></li>
+        <li className="nav-item"><Link href="/mint"><a  style={{color:"white"}}>Create</a></Link></li>
+        <li className="nav-item"><Link href="/features"><a  className="nav-link" style={{color:"white"}}>FAQs</a></Link></li>
+        <li className="nav-item"><Link href="/about"><a  className="nav-link" style={{color:"white"}}>About</a></Link></li>
         <li className="nav-item"><button className="btn btn-danger" onClick={()=>logout()}>Logout</button></li>
       </ul>
     </header>
