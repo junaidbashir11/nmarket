@@ -5,9 +5,12 @@ import { useAddress, useBalance, ThirdwebNftMedia, useContract, useUser } from "
 import Header from '../components/header';
 import Footer from '../components/footer';
 import NFTS from '../components/nfts';
-import Transactions from '../components/transactions';
+//import Transactions from '../components/transactions';
 import Tokens from '../components/tokens';
+import Transactions from '../components/transactions2';
 
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 
 const Wallet = () => {
 
@@ -26,6 +29,7 @@ const Wallet = () => {
 			<div className="container">
 			
 				{/*User Component */}
+
 				<div>
 					
 					<center>
@@ -35,36 +39,39 @@ const Wallet = () => {
         <option value="mumbai">Mumbai</option>
 								<option value="ethereum mainnet">Ethereum Mainnet</option>
 						</select>
-						<div className="container">
+						</section>
+</center>
+						<Tabs>
+    <TabList>
+      <Tab  style={{color:"white",backgroundColor:"black"}}>NFTS</Tab>
+      <Tab  style={{color:"white",backgroundColor:"black"}}>Transactions</Tab>
+						<Tab  style={{color:"white",backgroundColor:"black"}}>Tokens</Tab>
+    </TabList>
 
-							<div className="row">
-							<div className="col">
-								<h1 style={{color:"white"}}>NFTS</h1>
-					
-							<NFTS address={address} chain={networks} />
+    <TabPanel>
+					<center>
 
-							</div>
-							<div className="col">
-								<h1 style={{color:"white"}}>Transanctions</h1>
-								
-								<Transactions address={address} chain={networks}/>
-							</div>
-							<div className="col">
-								<h1 style={{color:"white"}}>Tokens</h1>
-								<Tokens  address={address} chain={networks}/>
-							</div>
-
-						</div>
-
-
-						</div>
-					</section>
+					<NFTS address={address} chain={networks} />
 					</center>
-
+   
+    </TabPanel>
+    <TabPanel>
+    <center>
+				<Transactions address={address} chain={networks}/>
+					</center>  						
 				
-				</div>
+    </TabPanel>
+				<TabPanel>
+					<center>
+					<Tokens  address={address} chain={networks}/>
+					</center>
+				
+				</TabPanel>
+  </Tabs>
+		
 				<Footer></Footer>
 			</div>
+		</div>
 		</div>
 
 	);

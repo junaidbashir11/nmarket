@@ -1,4 +1,6 @@
 import useSWR from "swr";
+
+
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function Tokens(props){
@@ -17,7 +19,7 @@ if (!data)  return "Loading...";
 return (
  <div>
 
-<p className="alert alert-warning">{JSON.stringify(data,null,2)}</p>
+<p style={{color:"white"}}>{JSON.stringify(data,null,2)}</p>
 
   </div>
 

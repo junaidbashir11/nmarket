@@ -4,8 +4,9 @@ export default function Main(){
 <div className="container my-5">
     <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
       <div className="col-lg-7 p-3 p-lg-5 pt-lg-3">
-        <h1 className="display-4 fw-bold lh-1">NFT Powered decentralized rewards for the next-generation</h1>
-        <p className="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec purus quam. Sed tempor auctor est, a ultrices sapien ultrices at. Phasellus nec egestas elit. Duis tincidunt mi a est euismod, a lobortis justo sodales. Duis imperdiet commodo tortor in maximus. In sodales placerat vestibulum. Nulla blandit urna ac diam semper fringilla. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        <h1 className="display-4 fw-bold lh-1" style={{ color:"white"
+        }}>NFT Powered decentralized rewards for the next-generation</h1>
+        <p className="lead" style={{color:"white"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec purus quam. Sed tempor auctor est, a ultrices sapien ultrices at. Phasellus nec egestas elit. Duis tincidunt mi a est euismod, a lobortis justo sodales. Duis imperdiet commodo tortor in maximus. In sodales placerat vestibulum. Nulla blandit urna ac diam semper fringilla. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 
 </p>
         <div className="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">

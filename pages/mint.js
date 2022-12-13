@@ -126,17 +126,13 @@ async function ERC1155() {
             {/* <!-- File Upload --> */}
           <h3 style={{"margin-top" : "10px",color:"white"}}>Upload and Start Minting your NFT</h3>
             <div className="">
-              <label
-                htmlFor="item-name"
-                className=""
-              >
-                File Upload<span className="text-red">*</span>
-              </label>
+              
               <input
                 type="file"
                 id="item-file"
-                className="form-control"
+                className="alert"
                 placeholder="Item file"
+                style={{color:"white",border:"2px solid white"}}
           
                 onChange={(e)=>setPicture({...picture,img:e.target.files[0],preview:`${URL.createObjectURL(e.target.files[0])}`})}
                 required
@@ -145,36 +141,28 @@ async function ERC1155() {
 
             {/* <!-- Name --> */}
             <div className="mb-6">
-              <label
-                htmlFor="item-name"
-                className=""
-              >
-                Name<span className="text-red">*</span>
-              </label>
+           
               <input
                 type="text"
                 id="item-name"
-                className="form-control"
+                className="alert"
                 placeholder="Item name"
                 onChange={(e)=>setName(e.target.value)}
+                style={{color:"white",border:"2px solid white",width:"310px"}}
                 required
               />
             </div>
 
            {/* <!-- Title--> */}
            <div className="mb-6">
-              <label
-                htmlFor="item-name"
-                className=""
-              >
-                Title<span className="text-red">*</span>
-              </label>
+         
               <input
                 type="text"
                 id="item-name"
-                className="form-control"
+                className="alert"
                 placeholder="Item title"
                 onChange={(e)=>setTitle(e.target.value)}
+                style={{color:"white",border:"2px solid white",width:"310px"}}
                 required
               />
             </div>
@@ -182,20 +170,16 @@ async function ERC1155() {
 
             {/* <!-- Description --> */}
             <div className="mb-6">
-              <label
-                htmlFor="item-description"
-                className=""
-              >
-                Description
-              </label>
+              
               
               <textarea
                 id="item-description"
-                className="form-control"
+                className="alert"
                 rows="4"
                 required
                 placeholder="Provide a detailed description of your item."
                 onChange={(e)=>setDescription(e.target.value)}
+                style={{color:"white",border:"2px solid white",width:"310px"}}
               ></textarea>
             </div>
 
@@ -227,9 +211,10 @@ async function ERC1155() {
               <input
                 type="text"
                 id="item-supply"
-                className="form-control"
+                className="alert"
                 placeholder="1"
                 onChange={(e)=>setQuantity(e.target.value)}
+                style={{color:"white",border:"2px solid white",width:"310px"}}
               />
               
             <button onClick={()=>setNfttype("erc721")} className="btn btn-danger">close</button>
@@ -264,7 +249,7 @@ async function ERC1155() {
 
       </div>
 
-      <div className="col" style={{backgroundColor:"tomato"}}>
+      <div className="col" style={{backgroundColor:"",border:"2px solid white"}}>
       <div>
         <h3 style={{"margin-top" : "10px" , "color" : "white"}}>NFT Preview</h3>
       </div>

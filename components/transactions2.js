@@ -1,5 +1,7 @@
 import useSWR from "swr";
 import { Parallax } from 'react-scroll-parallax';
+import { Slide ,Fade} from 'react-slideshow-image';
+import 'react-slideshow-image/dist/styles.css'
 
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
@@ -20,20 +22,24 @@ if (!data)  return "Loading...";
 return (
  <div style={{backgroundColor:""}}>
   
-  <select className="badge bg-primary">
   
-      
-    {data.map(obj=>(
+  <Slide>
 
-<option className="alert bg-dark" style={{fontFamily:"courier new",fontWeight:"bold"}} key={obj.from}>
-<p><span></span>from :{obj.from}</p>
-<p> to :{obj.to}</p>
-</option>
+
+     
+  {data.map(obj=>(
+
+<>
+<p style={{color:"white"}}>from :{obj.from}</p>
+<p style={{color:"white"}}> to :{obj.to}</p>
+</>
 
 
 ))}
 
-</select>
+  </Slide>
+ 
+
 
   
 

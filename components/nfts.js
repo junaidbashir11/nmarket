@@ -72,18 +72,20 @@ return (
 	
 	<button className="btn btn-primary" onClick={()=>setAction(true)}>Action</button>
 <button onClick={()=>setAction(false)} className="btn btn-danger"><span>close </span></button>
-  <div className="d-flex flex-column  bd-highlight mb-2">
-  <Slide >
-
+  <div className="">d-flex flex-column  bd-highlight mb-2
+  <Slide>
+     
     		{data?.map((obj)=>(
 
 
-<div style={{width:"200px" ,height:"300px"}} className="">
+<div style={{width:"300px" ,height:"300px"}} className="">
 	<div className=''>
   <div className="">
   <div>
-
-		<ThirdwebNftMedia metadata={obj.metadata}  className={styles.img} key={obj.tokenId}/>
+<center>
+<ThirdwebNftMedia metadata={obj.metadata}  className={styles.img} key={obj.tokenId}/>
+</center>
+		
 
 		</div>
 
